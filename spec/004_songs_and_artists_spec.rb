@@ -69,10 +69,12 @@ describe "Associations — Song and Artist:" do
       end
 
       it "does not add the song to the current artist's collection of songs if it already exists therein" do
-        2.times { artist.add_song(song) }
+     2.times { artist.add_song(song) }
+
+     #artist.add_song(song)
 
         expect(artist.songs).to include(song)
-        expect(artist.songs.size).to be(1)
+        expect(artist.songs.size).to equal(1)
       end
     end
   end
